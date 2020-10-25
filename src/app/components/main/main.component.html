@@ -1,0 +1,23 @@
+<div class="body">
+    <div class="container">
+        <div class="form">
+            <div *ngIf='isLoged_in' >
+                <h3 style="display: flex; justify-content: center;">NOTES</h3>
+                <input type="text" [(ngModel)]="addtext" /> <button type="button" (click)="add()"
+                    class="positive">{{isnew ? 'add': 'update' }}</button>
+            </div>
+
+            <ol>
+                <li *ngFor="let n of text" (click)=read(n.new)> {{n.new}}
+
+                    <button (click)='del(n.id)' class="negative">del</button>
+                    <button (click)='edit(n)' class="positive">edit</button>
+                    <hr>
+                </li>
+            </ol>
+            <p>{{ notification }}</p>
+            <button type="button" (click)="logout()" class="negative">Logout</button>
+
+        </div>
+    </div>
+</div>

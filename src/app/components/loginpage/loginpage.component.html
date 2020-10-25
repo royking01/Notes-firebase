@@ -1,0 +1,36 @@
+<div class="body">
+<div class="container">
+<form id="form" class="form">
+    <div *ngIf="page" class="form-control">
+        <label for="email">Email</label>
+    <input type="email" placeholder="email@" [(ngModel)]='email' name="email"><br>
+    <label for="password" >Password</label>
+    <input type="password" placeholder="password" min="5" required [(ngModel)]='password' name="password"><br>
+    <p> {{notification }}</p>
+
+    <button type="button" (click)='enterr()'> enter</button>
+    <button type="reset" class="negative">reset</button>
+    <p>Dont have an accout? sign up <button type="button" (click)="signup()"> here</button></p>
+</div>
+    <div *ngIf="signupp" class="form-control">
+        <!-- <label for="firstName"> Firstname</label>
+        <input type="text"> <br>
+        <label for="lastName">LastName</label>
+        <input type="text" name="" id=""> <br> -->
+        <label for="email"> Email</label>
+        <input type="email" placeholder="email@" [(ngModel)]='email' name="email"> <br>
+        <label for="password">PassWord</label>
+        <input type="password" [(ngModel)]='password' name="password"><br>
+        <!-- <label for="cpassword">Retype Password</label>
+        <input type="password">  <br> -->
+        <p>{{ notification }}</p>
+        <button type="button" (click)="signupno()"> SignUp</button>
+        <button type="button" (click)="back()"> Back</button>
+
+        <button *ngIf='isLoged_in' type="button" (click)="logout()">'logout'</button>
+
+    </div>
+
+</form>
+</div>
+</div>
